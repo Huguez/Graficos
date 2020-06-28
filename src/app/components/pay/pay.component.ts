@@ -3,7 +3,6 @@ import { ChartType, ChartOptions } from 'chart.js';
 import { Label } from 'ng2-charts';
 
 
-
 @Component({
   selector: 'app-pay',
   templateUrl: './pay.component.html',
@@ -25,6 +24,7 @@ export class PayComponent implements OnInit {
       },
     }
   };
+  
   public pieChartLabels: Label[] = [['Download', 'Sales'], ['In', 'Store', 'Sales'], 'Mail Sales'];
   public pieChartData: number[] = [300, 500, 100];
   public pieChartType: ChartType = 'pie';
