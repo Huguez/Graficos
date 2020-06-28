@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-md-6">
+        <div style="display: block;">
+            <canvas baseChart width="400" height="400" [datasets]="lineChartData" [labels]="lineChartLabels" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <table class="table table-responsive">
+            <tr>
+                <th *ngFor="let label of lineChartLabels">{{label}}</th>
+            </tr>
+            <tr *ngFor="let d of lineChartData; let i=index" [class]="'line-'+i">
+                <td *ngFor="let label of lineChartLabels; let j=index"> {{d.data[j]}}</td>
+            </tr>
+        </table>
+        <button class="btn btn-primary" (click)="random()">Randomize</button> &nbsp;
+        <button class="btn btn-primary" (click)="pushOne()">meter uno</button>
+    </div>
+</div>
